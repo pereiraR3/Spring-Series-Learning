@@ -1,15 +1,15 @@
 package com.exemple.curso.remedio;
 
-import java.time.LocalDate;
-
 import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotBlank;
 
+import java.time.LocalDate;
+
 public record DadosCadastradosRemedio(
 		
 		@NotBlank
-		String nome, 
+		String nome,
 		
 		@Enumerated
 		Via via, 
