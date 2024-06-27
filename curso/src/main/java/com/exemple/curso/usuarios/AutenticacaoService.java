@@ -1,5 +1,4 @@
-package com.exemple.curso.users;
-
+package com.exemple.curso.usuarios;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,7 +14,10 @@ public class AutenticacaoService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-
-        return repository.findByLogin(username);
+        UserDetails user = repository.findByLogin(username);
+        if (user == null) {
+            throw new UsernameNotFoundException("Usuário não encontrado: " + username);
+        }
+        return user;
     }
 }

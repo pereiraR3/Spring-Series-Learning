@@ -1,4 +1,4 @@
-package com.exemple.curso.users;
+package com.exemple.curso.usuarios;
 
 public record DadosAutenticacao(
 
